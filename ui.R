@@ -20,13 +20,13 @@ ui <- dashboardPage(
           ),
           fluidRow(
             shinydashboard::box(
-              title = "Please select input (1)", width = 3,
+              title = "Please select input (1)", width = 4,
               background = "light-blue",
               selectInput("partition", "Select UN or UNOPS:",
                           choices = list("UNOPS" = "unops", "UN" = "un"), 
                           selected = "un", multiple = FALSE)), 
             shinydashboard::box(
-              title = "Please select input (2)", width = 3,
+              title = "Please select input (2)", width = 4,
               background = "light-blue",
               selectInput("ctryID", "Select a country:",
                           choices = choices, 
@@ -35,7 +35,7 @@ ui <- dashboardPage(
           ),
           fluidRow(
             shinydashboard::box(
-                title = "Quick stats", width = 2,
+                title = "Quick stats", width = 3,
                 background = "light-blue",
                 "Total procurement by UN/UNOPS in this country:",
                 verbatimTextOutput("totalsproc"),
@@ -43,7 +43,7 @@ ui <- dashboardPage(
                 verbatimTextOutput("ctrysharetot")
               ),
             shinydashboard::box(
-              title = "Supplier pie chart", width = 4, 
+              title = "Supplier pie chart", width = 5, 
               status = "primary", solidHeader = TRUE,
               imageOutput("section2", height=350),
               downloadButton("dl_suppie", "Download", class = "butt")
@@ -51,7 +51,7 @@ ui <- dashboardPage(
           ),
           fluidRow(
             shinydashboard::box(
-              title = "Total procurement - plot", width = 4,
+              title = "Total procurement - plot", width = 5,
               status = "primary", solidHeader = TRUE,
               imageOutput("section1", height=300),
               downloadButton("dl_procbar", "Download", class = "butt"),
@@ -60,7 +60,7 @@ ui <- dashboardPage(
                            .butt{color: white;} .butt{font-family:Verdana;}"))
             ),
             shinydashboard::box(
-              title = "Total procurement - raw", width = 2,
+              title = "Total procurement - raw", width = 3,
               status = "primary", solidHeader = TRUE,
               br(),
               tableOutput('totproc_table'),
@@ -70,7 +70,7 @@ ui <- dashboardPage(
           ),
           fluidRow(
             shinydashboard::box(
-              title = "Category distributions", width = 6,
+              title = "Category distributions", width = 8,
               status = "primary", solidHeader = TRUE,
               imageOutput("gs_breakdown", height=400),
               br(),
@@ -79,7 +79,7 @@ ui <- dashboardPage(
           ),
           fluidRow(
             shinydashboard::box(
-              title = "Procurement by agency - plot", width = 4,
+              title = "Procurement by agency - plot", width = 5,
               status = "primary", solidHeader = TRUE,
               imageOutput("sharebar", height = 300),
               br(),
@@ -88,7 +88,7 @@ ui <- dashboardPage(
               br()
             ),
             shinydashboard::box(
-              title = "Procurement by agency - raw", width = 2,
+              title = "Procurement by agency - raw", width = 3,
               status = "primary", solidHeader = TRUE,
               br(),
               tableOutput("sharetable"),
